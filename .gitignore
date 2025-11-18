@@ -1,0 +1,41 @@
+@'
+# Go
+/bin/
+/obj/
+*.exe
+*.test
+*.out
+vendor/
+
+# Go modules
+go.sum
+
+# VS Code
+.vscode/
+
+# OS / tooling
+.DS_Store
+Thumbs.db
+
+# Editor swap / backup
+*~ 
+*.swp
+*.swo
+
+# OneDrive / MS Office temp
+~$*
+*.lnk
+
+# IDEs
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+
+# Git LFS pointer files if using LFS (do not include actual large files)
+'@ | Out-File -Encoding utf8 .gitignore
