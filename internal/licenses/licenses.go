@@ -19,11 +19,11 @@ type PrepaidUnits struct {
 
 // SubscribedSku represents a subscribed SKU
 type SubscribedSku struct {
-	ID            string        `json:"id,omitempty"`
-	SkuID         string        `json:"skuId,omitempty"`
-	SkuPartNumber string        `json:"skuPartNumber,omitempty"`
-	ConsumedUnits int           `json:"consumedUnits,omitempty"`
-	PrepaidUnits  PrepaidUnits  `json:"prepaidUnits"`
+	ID            string       `json:"id,omitempty"`
+	SkuID         string       `json:"skuId,omitempty"`
+	SkuPartNumber string       `json:"skuPartNumber,omitempty"`
+	ConsumedUnits int          `json:"consumedUnits,omitempty"`
+	PrepaidUnits  PrepaidUnits `json:"prepaidUnits"`
 }
 
 // SkuResponse represents the response when listing SKUs

@@ -38,4 +38,7 @@ dist/
 build/
 
 # Git LFS pointer files if using LFS (do not include actual large files)
+
+# Local scripts
+git-push.ps1
 '@ | Out-File -Encoding utf8 .gitignore
