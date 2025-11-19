@@ -184,10 +184,12 @@ func setupLicensesCommands(rootCmd *cobra.Command) {
 			}
 
 			w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
-			fmt.Fprintln(w, "SKU Part Number\tSKU ID\tConsumed Units")
-			fmt.Fprintln(w, "---------------\t------\t--------------")
+			fmt.Fprintln(w, "SKU Part Number\tSKU ID\tConsumed\tTotal\tRemaining")
+			fmt.Fprintln(w, "---------------\t------\t--------\t-----\t---------")
 			for _, sku := range skus {
-				fmt.Fprintf(w, "%s\t%s\t%d\n", sku.SkuPartNumber, sku.SkuID, sku.ConsumedUnits)
+				total := sku.PrepaidUnits.Enabled
+				remaining := total - sku.ConsumedUnits
+				fmt.Fprintf(w, "%s\t%s\t%d\t%d\t%d\n", sku.SkuPartNumber, sku.SkuID, sku.ConsumedUnits, total, remaining)
 			}
 			w.Flush()
 
